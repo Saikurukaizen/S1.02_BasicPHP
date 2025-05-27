@@ -15,12 +15,12 @@ function esPrimo(int $n): bool{
     return($con == 2) ? true : false;
 }
 
-for($i = NUM_MIN; $i < NUM_MAX; $i++){
+for($i = NUM_MIN; $i <= NUM_MAX; $i++){
     if(esPrimo($i)){
-        echo 'El número '.$i. 'es primo' . PHP_EOL;
+        echo 'El número '.$i.' es primo' . PHP_EOL;
     }
     else{
-        echo 'El número '.$i. ' no es primo' . PHP_EOL;
+        echo 'El número '.$i.' no es primo' . PHP_EOL;
     }
 }
 

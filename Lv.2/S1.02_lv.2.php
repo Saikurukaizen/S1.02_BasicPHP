@@ -14,9 +14,9 @@ function llamada(int $duracion): int{
     }
 }
 
-llamada(2) . PHP_EOL;
-llamada(5) . PHP_EOL;
-llamada(10) . PHP_EOL;
+echo llamada(2) . PHP_EOL;
+echo llamada(5) . PHP_EOL;
+echo llamada(10) . PHP_EOL;
 
 function calcularSubtotal($dulces, $cantidad): float{
     $productos = [
@@ -27,9 +27,9 @@ function calcularSubtotal($dulces, $cantidad): float{
     return $productos[$dulces] * $cantidad;   
 }
 
-$subTotalChocolate = CalcularSubtotal('chocolate', 2) . PHP_EOL;
-$subTotalChicles = CalcularSubtotal('chicles', 1) . PHP_EOL;
-$subTotalCaramelos = CalcularSubtotal('caramelos', 1) . PHP_EOL;
+$subTotalChocolate = calcularSubtotal('chocolate', 2);
+$subTotalChicles = calcularSubtotal('chicles', 1);
+$subTotalCaramelos = calcularSubtotal('caramelos', 1);
 
 $total = $subTotalChocolate + $subTotalChicles + $subTotalCaramelos;
 echo 'El total de la compra es: '.$total.'€' . PHP_EOL;

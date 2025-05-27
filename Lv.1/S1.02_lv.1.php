@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 //EJ.1
 
-const FULL_NAME = "Marc Sanchez";
+define('FULL_NAME', "Marc Sanchez");
 
 echo FULL_NAME;
 
@@ -63,15 +63,11 @@ $sumaTotal = $x + $y + $n + $m;
 echo $sumaTotal . PHP_EOL;
 
 $nums = [$x, $y, $n, $m];
-while($nums){
-    echo $x * 2 . PHP_EOL;
-    echo $y * 2 . PHP_EOL;
-    echo $n * 2 . PHP_EOL;
-    echo $m * 2 . PHP_EOL;
-    break;
+foreach($nums as $num){
+    echo $num * 2 . PHP_EOL;
 }
 
-function calculadora($n1, $n2, $op){
+function calculadora($n1, $n2, $op): string|float{
     switch($op){
         case '+':
             return $n1 + $n2;
@@ -88,22 +84,22 @@ function calculadora($n1, $n2, $op){
     }
 }
 
-Calculadora(7, 14, '*') . PHP_EOL;
+calculadora(7, 14, '*') . PHP_EOL;
 
 //EJ.4
 
-function contar($in, $fn, $con = 1){
-    for($i = $in; $i <= $fn; $i += $con){
-        echo $i . " ";
+function contar($in = 1, $fn = 10): void{
+    for($i = 1; $i <= $fn; $i += $in){
+        echo $i . " " . PHP_EOL;
     }
 }
 
-Contar(5,1) . PHP_EOL;
-Contar(10,1) . PHP_EOL;
-Contar(20,2) . PHP_EOL;
-Contar(20, 5, 3) . PHP_EOL;
+contar(5,1);
+contar(10,1);
+contar(20,2);
+contar(20, 5, 3);
 
-function Results($nota){
+function calificar($nota): void{
     if($nota >= 0.60){
         echo "Ets primera Divisió" . PHP_EOL;
     } 
@@ -121,12 +117,12 @@ function Results($nota){
     }
 }
 
-Results(0.60) . PHP_EOL;
-Results(0.45) . PHP_EOL;
-Results(0.33) . PHP_EOL;
-Results(0.15) . PHP_EOL;
+calificar(0.60) . PHP_EOL;
+calificar(0.45) . PHP_EOL;
+calificar(0.33) . PHP_EOL;
+calificar(0.15) . PHP_EOL;
 
-function isBitten(){
+function isBitten(): void{
     $finger = rand(0,1);
     if($finger == 1){
         echo "Charlie m'ha mossegat el dit!" . PHP_EOL;
