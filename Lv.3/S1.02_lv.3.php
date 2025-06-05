@@ -6,13 +6,13 @@ define("NUM_MIN", 1);
 define("NUM_MAX", 100);
 
 function esPrimo(int $n): bool{
-    $con = 0;
-    for($i = 1; $i <= $n; $i++){
-        if($n % $i == 0){
-            $con++;
-        }
+    if($n < 2) return false;
+    if($n === 2) return true;
+    if($n % 2 === 0) return false;
+    for($i = 3; $i <= sqrt($n); $i += 2){
+        if($n % $i == 0) return false
     }
-    return($con == 2) ? true : false;
+    return true;
 }
 
 for($i = NUM_MIN; $i <= NUM_MAX; $i++){
